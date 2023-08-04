@@ -1,4 +1,4 @@
-![image](https://mega.nz/file/k3lR0RLB#LEmRAIjzDu-UKVoNAGuizHB0Pc96zzoDxJkBxtFa2eg)
+![image](./logo.png)
 ========
   
 ####Chiri's wrapper to enable fixing broken stereoscopic effects in DX11 games.
