@@ -2148,11 +2148,6 @@ STDMETHODIMP HackerDevice::CreateBuffer(THIS_
 		hash = data_hash = crc32c_hw(hash, pInitialData->pSysMem, pDesc->ByteWidth);
 	if (pDesc)
 		hash = crc32c_hw(hash, pDesc, sizeof(D3D11_BUFFER_DESC));
-	//  2023-08-06测试修改buffer大小，这里我们设置为原本的两倍大
-	// Modify buffer size
-	//UINT modifiedBufferSize = pDesc->ByteWidth * 4; // Increase the buffer size, modify as needed
-	//newDesc = *pDesc; // Make a copy of the original descriptor
-	//newDesc.ByteWidth = modifiedBufferSize; // Modify the buffer size
 
 	// Override custom settings?
 	pNewDesc = process_texture_override(hash, mStereoHandle, pDesc, &newDesc, &oldMode);
