@@ -2030,7 +2030,11 @@ static void override_resource_desc_common_2d_3d(DescType *desc, TextureOverride 
 	}
 }
 
-static void override_resource_desc(D3D11_BUFFER_DESC *desc, TextureOverride *textureOverride) {}
+// TODO 这里就是突破顶点数量限制的地方
+static void override_resource_desc(D3D11_BUFFER_DESC *desc, TextureOverride *textureOverride) {
+	desc->ByteWidth = 640000;
+}
+
 static void override_resource_desc(D3D11_TEXTURE1D_DESC *desc, TextureOverride *textureOverride) {}
 static void override_resource_desc(D3D11_TEXTURE2D_DESC *desc, TextureOverride *textureOverride)
 {
@@ -2144,6 +2148,11 @@ STDMETHODIMP HackerDevice::CreateBuffer(THIS_
 		hash = data_hash = crc32c_hw(hash, pInitialData->pSysMem, pDesc->ByteWidth);
 	if (pDesc)
 		hash = crc32c_hw(hash, pDesc, sizeof(D3D11_BUFFER_DESC));
+	//  2023-08-06测试修改buffer大小，这里我们设置为原本的两倍大
+	// Modify buffer size
+	//UINT modifiedBufferSize = pDesc->ByteWidth * 4; // Increase the buffer size, modify as needed
+	//newDesc = *pDesc; // Make a copy of the original descriptor
+	//newDesc.ByteWidth = modifiedBufferSize; // Modify the buffer size
 
 	// Override custom settings?
 	pNewDesc = process_texture_override(hash, mStereoHandle, pDesc, &newDesc, &oldMode);

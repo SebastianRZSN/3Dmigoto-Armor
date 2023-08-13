@@ -3175,6 +3175,7 @@ STDMETHODIMP_(void) FrameAnalysisContext::IASetVertexBuffers(THIS_
 			StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
 	FrameAnalysisLogResourceArray(StartSlot, NumBuffers, (ID3D11Resource *const *)ppVertexBuffers);
 
+
 	HackerContext::IASetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
 }
 

@@ -151,6 +151,17 @@ static HRESULT STDMETHODCALLTYPE CreateBuffer(
 
 	HookDebug("HookedDevice::CreateBuffer()\n");
 
+	// 修改Buffer大小为原本的三倍,这段我测试过了，没有用，看来不是这样增加的
+	//D3D11_BUFFER_DESC modifiedDesc = *pDesc;
+	//modifiedDesc.ByteWidth *= 3;
+
+
+	//if (device)
+		//return ID3D11Device1_CreateBuffer(device, &modifiedDesc, pInitialData, ppBuffer);
+
+	//return orig_vtable.CreateBuffer(This, &modifiedDesc, pInitialData, ppBuffer);
+
+
 	if (device)
 		return ID3D11Device1_CreateBuffer(device, pDesc, pInitialData, ppBuffer);
 

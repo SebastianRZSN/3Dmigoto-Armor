@@ -185,11 +185,13 @@ private:
 		UINT64 selectedShader,
 		UINT64 *currentShaderHash,
 		ID3D11Shader **currentShaderHandle);
+
 	template <void (__stdcall ID3D11DeviceContext::*OrigSetShaderResources)(THIS_
 			UINT StartSlot,
 			UINT NumViews,
 			ID3D11ShaderResourceView *const *ppShaderResourceViews)>
 	void BindStereoResources();
+
 	template <void (__stdcall ID3D11DeviceContext::*OrigSetShaderResources)(THIS_
 			UINT StartSlot,
 			UINT NumViews,
