@@ -2032,7 +2032,7 @@ static void override_resource_desc_common_2d_3d(DescType *desc, TextureOverride 
 
 // TODO 这里就是突破顶点数量限制的地方
 static void override_resource_desc(D3D11_BUFFER_DESC *desc, TextureOverride *textureOverride) {
-	desc->ByteWidth = 640000;
+	desc->ByteWidth =  1600000;
 }
 
 static void override_resource_desc(D3D11_TEXTURE1D_DESC *desc, TextureOverride *textureOverride) {}
@@ -2067,6 +2067,7 @@ static const DescType* process_texture_override(uint32_t hash,
 	if (is_square_surface(origDesc))
 		newMode = (NVAPI_STEREO_SURFACECREATEMODE) G->gSurfaceSquareCreateMode;
 
+	//Nico:这里估计是判断hash是否存在于TextureOverride里
 	find_texture_overrides(hash, origDesc, &matches, NULL);
 
 	if (origDesc && !matches.empty()) {
@@ -2097,7 +2098,15 @@ static const DescType* process_texture_override(uint32_t hash,
 			if (textureOverride->stereoMode != -1)
 				newMode = (NVAPI_STEREO_SURFACECREATEMODE) textureOverride->stereoMode;
 
-			override_resource_desc(newDesc, textureOverride);
+			
+			
+			//Nico: 我们需要在这里判断这个hash的值，是否属于我们指定的hash值，才能去提升。
+			//也就是所谓的VertexLimitRaise，GIMI可能也是因为这个原因,才添加了单独的TextureOverrideVertexLimitRaise
+			//所以这里采用比GIMI更简单的方法，我们判断priority是否设置为-2，如果设置为-2则突破顶点数量限制，比GIMI的方案少了几百行代码。
+			if (textureOverride->priority == -2) {
+				override_resource_desc(newDesc, textureOverride);
+			}
+			
 		}
 	}
 

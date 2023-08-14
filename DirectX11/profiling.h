@@ -40,6 +40,7 @@ namespace Profiling {
 		overhead->cpu.QuadPart += end_time.QuadPart - state->start_time.QuadPart;
 	}
 
+	//Nico:这个感觉像工具类，用来在map里寻找指定hash
 	template<class T>
 	static inline typename T::iterator lookup_map(T &map, typename T::key_type key, Profiling::Overhead *overhead)
 	{

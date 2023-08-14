@@ -1641,6 +1641,7 @@ static bool matches_draw_info(TextureOverride *tex_override, DrawCallInfo *call_
 	return true;
 }
 
+//Nico:这里遍历变量来判断指定的hash是否在变量的map或list里。
 static void find_texture_override_for_hash(uint32_t hash, TextureOverrideMatches *matches, DrawCallInfo *call_info)
 {
 	TextureOverrideMap::iterator i;
