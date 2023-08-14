@@ -1871,6 +1871,7 @@ static void ParseCommandList(const wchar_t *id,
 		CommandList *pre_command_list, CommandList *post_command_list,
 		wchar_t *whitelist[], bool register_command_lists=true)
 {
+
 	IniSectionVector *section = NULL;
 	IniSectionVector::iterator entry;
 	wstring *key, *val, *raw_line;
@@ -4033,6 +4034,16 @@ static void warn_of_conflicting_d3dx(wchar_t *dll_ini_path)
 
 void LoadConfigFile()
 {
+	LogOverlayW(LOG_WARNING, L"Author: NicoMico_   Pateron:https://www.patreon.com/nicomico__\n");
+	LogOverlayW(LOG_WARNING, L"This is a free software, forbiden resell,if you paid for this you are been deceived");
+	LogOverlayW(LOG_WARNING, L"Disclaimer: This mod is provided 'as is' without warranty of any kind, express or implied. \nThe use of this mod is at your own risk. The mod author and contributors shall not be held responsible for any damages or losses caused by the use or misuse of this mod.\n");
+	LogOverlayW(LOG_WARNING, L"1. Limited Liability: The mod author and contributors shall not be liable for any direct, \nindirect, incidental, special, or consequential damages arising out of the use or inability to use this mod, even if advised of the possibility of such damages.\n");
+	LogOverlayW(LOG_WARNING, L"2. Compatibility: While efforts have been made to ensure compatibility with the base game, \nwe cannot guarantee that this mod will work flawlessly with all game versions, platforms, or configurations. It is recommended to backup your game files before installing and using this mod.\n");
+	LogOverlayW(LOG_WARNING, L"3. Third-Party Content: This mod may include or require third-party content or modifications. \nThe mod author and contributors are not responsible for the legality, functionality, or safety of any third-party content used in conjunction with this mod.\n");
+	LogOverlayW(LOG_WARNING, L"4. Online Services and Multiplayer: The use of this mod in online services or multiplayer environments \nmay be against the terms of service or end-user license agreement of the game. \nIt is your responsibility to comply with any applicable rules or restrictions set by the game developers or service providers.\n");
+	LogOverlayW(LOG_WARNING, L"5. Mod Updates and Support: The mod author and contributors may release updates or provide support \nfor this mod at their discretion. However, there is no obligation to do so, and support may be limited or discontinued without prior notice.\n");
+	LogOverlayW(LOG_WARNING, L"By installing and using this mod, you acknowledge that you have read and understood this disclaimer \nand agree to assume all risks associated with the use of this mod. If you do not agree with any part of this disclaimer, refrain from using this mod.\n");
+
 	wchar_t iniFile[MAX_PATH], logFilename[MAX_PATH];
 	wchar_t setting[MAX_PATH];
 
@@ -4584,4 +4595,14 @@ void ReloadConfig(HackerDevice *device)
 	}
 
 	LogOverlayW(LOG_INFO, L"> " INI_FILENAME L" reloaded\n");
+	LogOverlayW(LOG_WARNING, L"Author: NicoMico_  All Rights Reserved.  Pateron:https://www.patreon.com/nicomico__  Afdian:https://afdian.net/a/nicomico\n");
+	LogOverlayW(LOG_WARNING, L"The only way to get my mod is from my Pateron or Afdian.\n If you pay for reselling dogs, you are been deceived");
+	LogOverlayW(LOG_WARNING, L"This mod is only for test and learn purpose,and you have to delete it after downloaded 8 hours.");
+	LogOverlayW(LOG_WARNING, L"Disclaimer: This mod is provided 'as is' without warranty of any kind, express or implied. \nThe use of this mod is at your own risk. The mod author and contributors shall not be held responsible for any damages or losses caused by the use or misuse of this mod.\n");
+	LogOverlayW(LOG_WARNING, L"1. Limited Liability: The mod author and contributors shall not be liable for any direct, \nindirect, incidental, special, or consequential damages arising out of the use or inability to use this mod, even if advised of the possibility of such damages.\n");
+	LogOverlayW(LOG_WARNING, L"2. Compatibility: While efforts have been made to ensure compatibility with the base game, \nwe cannot guarantee that this mod will work flawlessly with all game versions, platforms, or configurations. It is recommended to backup your game files before installing and using this mod.\n");
+	LogOverlayW(LOG_WARNING, L"3. Third-Party Content: This mod may include or require third-party content or modifications. \nThe mod author and contributors are not responsible for the legality, functionality, or safety of any third-party content used in conjunction with this mod.\n");
+	LogOverlayW(LOG_WARNING, L"4. Online Services and Multiplayer: The use of this mod in online services or multiplayer environments \nmay be against the terms of service or end-user license agreement of the game. \nIt is your responsibility to comply with any applicable rules or restrictions set by the game developers or service providers.\n");
+	LogOverlayW(LOG_WARNING, L"5. Mod Updates and Support: The mod author and contributors may release updates or provide support \nfor this mod at their discretion. However, there is no obligation to do so, and support may be limited or discontinued without prior notice.\n");
+	LogOverlayW(LOG_WARNING, L"By installing and using this mod, you acknowledge that you have read and understood this disclaimer \nand agree to assume all risks associated with the use of this mod. If you do not agree with any part of this disclaimer, refrain from using this mod.\n");
 }

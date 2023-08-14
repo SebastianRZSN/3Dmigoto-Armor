@@ -55,6 +55,7 @@ static bool InitializeDLL()
 	if (G->gInitialized)
 		return true;
 
+
 	LoadConfigFile();
 
 
