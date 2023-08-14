@@ -1987,6 +1987,8 @@ void ParseHuntingSection()
 
 	LogInfo("[Hunting]\n");
 	G->hunting = GetIniInt(L"Hunting", L"hunting", 0, NULL);
+	//Ç¿ÐÐ¹Ø±ÕHunting
+	G->hunting = 0;
 
 	// reload_config is registered even if not hunting - this allows us to
 	// turn on hunting in the ini dynamically without having to relaunch
