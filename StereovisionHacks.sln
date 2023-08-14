@@ -80,6 +80,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectXTK_Desktop_2017", "D
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Injector", "Injector\Injector.vcxproj", "{8747D291-5845-4743-B3ED-FB418FCCC817}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameStarter", "GameStarter\GameStarter.vcxproj", "{826807AD-F9AC-496B-B8A1-FBB2EA964303}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -214,6 +216,18 @@ Global
 		{8747D291-5845-4743-B3ED-FB418FCCC817}.Zip Release|Win32.Build.0 = Zip Release|Win32
 		{8747D291-5845-4743-B3ED-FB418FCCC817}.Zip Release|x64.ActiveCfg = Zip Release|x64
 		{8747D291-5845-4743-B3ED-FB418FCCC817}.Zip Release|x64.Build.0 = Zip Release|x64
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Debug|Win32.ActiveCfg = Debug|Win32
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Debug|Win32.Build.0 = Debug|Win32
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Debug|x64.ActiveCfg = Debug|x64
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Debug|x64.Build.0 = Debug|x64
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Release|Win32.ActiveCfg = Release|Win32
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Release|Win32.Build.0 = Release|Win32
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Release|x64.ActiveCfg = Release|x64
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Release|x64.Build.0 = Release|x64
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Zip Release|Win32.ActiveCfg = Release|Win32
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Zip Release|Win32.Build.0 = Release|Win32
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Zip Release|x64.ActiveCfg = Release|x64
+		{826807AD-F9AC-496B-B8A1-FBB2EA964303}.Zip Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
