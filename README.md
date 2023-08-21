@@ -7,7 +7,7 @@ A special version of 3Dmigoto special for GPU Driven Animation Game mod.
 - Intergrated to Visual Studio Community 2022.
 - Vertex Number Limit Break to default: 3200000 bytes.
 - Only support compile it in Release X64 mode.
-
+- Disable Hunting in code level rather in ini config file.
 
 # Discord Community
 Join our discord community for technique support and communicate.
