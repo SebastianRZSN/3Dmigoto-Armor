@@ -5,8 +5,10 @@ A special version of 3Dmigoto special for GPU Driven Animation Game mod.
 
 # Features
 - Intergrated to Visual Studio Community 2022.
-- Vertex Number Limit Break to default: 640000.
-# TODO list
-- mod文件加密为xxx.3dm格式
-- mod文件中写入用于联网验证的作者信息，比如pateron auth
-- 
+- Vertex Number Limit Break to default: 3200000 bytes.
+- Only support compile it in Release X64 mode.
+
+
+# Discord Community
+Join our discord community for technique support and communicate.
+https://discord.gg/gEzkrsvJCt
