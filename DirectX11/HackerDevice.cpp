@@ -2030,7 +2030,7 @@ static void override_resource_desc_common_2d_3d(DescType *desc, TextureOverride 
 	}
 }
 
-// TODO 这里就是突破顶点数量限制的地方
+// Nico:这里就是突破顶点数量限制的地方
 static void override_resource_desc(D3D11_BUFFER_DESC *desc, TextureOverride *textureOverride) {
 	desc->ByteWidth =  1600000;
 }
@@ -2102,10 +2102,26 @@ static const DescType* process_texture_override(uint32_t hash,
 			
 			//Nico: 我们需要在这里判断这个hash的值，是否属于我们指定的hash值，才能去提升。
 			//也就是所谓的VertexLimitRaise，GIMI可能也是因为这个原因,才添加了单独的TextureOverrideVertexLimitRaise
-			//所以这里采用比GIMI更简单的方法，我们判断priority是否设置为-2，如果设置为-2则突破顶点数量限制，比GIMI的方案少了几百行代码。
+			//所以这里采用比GIMI更简单的方法，我们判断priority是否设置为-2，如果设置为-2则突破顶点数量限制，
+			//理论上比GIMI的方案少了几百行代码。
 			if (textureOverride->priority == -2) {
 				override_resource_desc(newDesc, textureOverride);
 			}
+
+			//Nico: TODO 测试这里的VertexLimitRaise是否和global.h中的format有关，format的值是代表对应的格式吗?
+			//if (textureOverride->ini_section == std::wstring(L"TextureOverrideVertexLimitRaise")) {
+				//override_resource_desc(newDesc, textureOverride);
+			//}
+			//Nico: 目前可以确定 ini_section为如下内容，所以只需要判断是否以VertexLimitRaise结尾就可以了。
+			//  TextureOverride\Mods\  TextureOverride\Mods\output\NicoMico-P2\NicoMico-P2.ini\_NicoMico-P2_VertexLimitRaise
+			std::wstring targetSuffix = L"VertexLimitRaise";
+			std::wstring iniSection = textureOverride->ini_section;
+
+			if (iniSection.length() >= targetSuffix.length() &&
+				iniSection.substr(iniSection.length() - targetSuffix.length()) == targetSuffix) {
+				override_resource_desc(newDesc, textureOverride);
+			}
+
 			
 		}
 	}
