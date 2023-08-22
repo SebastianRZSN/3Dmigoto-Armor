@@ -12,3 +12,11 @@ A special version of 3Dmigoto special for GPU Driven Animation Game mod.
 # Discord Community
 Join our discord community for technique support and communicate.
 https://discord.gg/gEzkrsvJCt
+
+# Acknowledgements
+Without their original 3dmigoto repo the game mod version will be impossible.
+Huge thanks to Chiri,DarkStarSword,bo3b and 3Dmigoto original author group.
+
+Special thanks for GIMI&SRMI author:
+SilentNightSound
+
