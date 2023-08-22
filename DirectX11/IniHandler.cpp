@@ -4034,7 +4034,8 @@ static void warn_of_conflicting_d3dx(wchar_t *dll_ini_path)
 
 void LoadConfigFile()
 {
-	LogOverlayW(LOG_WARNING, L"All mods is totally FREE and should be FREE, if you pay or sponser someone to get mod, you are been deceived! ");
+	LogOverlayW(LOG_WARNING, L"Author :NicoMico_ all rights reserved.   https://afdian.net/a/nicomico");
+	LogOverlayW(LOG_WARNING, L"You can only get mod from NicoMico's afdian, if not, you may have been deceived by resell dog.");
 	LogOverlayW(LOG_WARNING, L"Disclaimer: This mod is provided 'as is' without warranty of any kind, express or implied. \nThe use of this mod is at your own risk. The mod author and contributors shall not be held responsible for any damages or losses caused by the use or misuse of this mod.\n");
 	LogOverlayW(LOG_WARNING, L"1. Limited Liability: The mod author and contributors shall not be liable for any direct, \nindirect, incidental, special, or consequential damages arising out of the use or inability to use this mod, even if advised of the possibility of such damages.\n");
 	LogOverlayW(LOG_WARNING, L"2. Compatibility: While efforts have been made to ensure compatibility with the base game, \nwe cannot guarantee that this mod will work flawlessly with all game versions, platforms, or configurations. It is recommended to backup your game files before installing and using this mod.\n");
