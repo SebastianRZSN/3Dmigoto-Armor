@@ -918,7 +918,7 @@ bool GetIniString(const wchar_t *section, const wchar_t *key, const wchar_t *def
 	return found;
 }
 
-// For sections that allow the same key to be used multiple times with
+// For sections that allow the  same key to be used multiple times with
 // different values, fills out a vector with all values of the key
 static std::vector<std::wstring> GetIniStringMultipleKeys(const wchar_t *section, const wchar_t *key)
 {
@@ -1247,6 +1247,7 @@ static void GetUserConfigPath(const wchar_t *migoto_path)
 		G->user_config = rel_path;
 }
 
+//Nico:我感觉这里才是真正解析Mod文件的地方
 static void ParseIncludedIniFiles()
 {
 	IniSections include_sections;
@@ -1734,6 +1735,7 @@ static void ParseResourceInitialData(CustomResource *custom_resource, const wcha
 	}
 }
 
+//Nico: 这里看起来像是解析Mod文件的地方
 static void ParseResourceSections()
 {
 	IniSections::iterator lower, upper, i;
@@ -4043,11 +4045,14 @@ void LoadConfigFile()
 	LogOverlayW(LOG_WARNING, L"4. Online Services and Multiplayer: The use of this mod in online services or multiplayer environments \nmay be against the terms of service or end-user license agreement of the game. \nIt is your responsibility to comply with any applicable rules or restrictions set by the game developers or service providers.\n");
 	LogOverlayW(LOG_WARNING, L"By installing and using this mod, you acknowledge that you have read and understood this disclaimer \nand agree to assume all risks associated with the use of this mod. If you do not agree with any part of this disclaimer, refrain from using this mod.\n");
 
+	//Nico: 初始化几个变量
 	wchar_t iniFile[MAX_PATH], logFilename[MAX_PATH];
 	wchar_t setting[MAX_PATH];
 
+	//Nico: 设置初始化完成标志为 true
 	G->gInitialized = true;
 
+	//Nico: 如果无法获取d3dx.ini，则认为注入失败，这时将会退出。
 	if (!GetModuleFileName(migoto_handle, iniFile, MAX_PATH))
 		DoubleBeepExit();
 	wcsrchr(iniFile, L'\\')[1] = 0;

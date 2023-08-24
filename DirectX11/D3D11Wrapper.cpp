@@ -60,11 +60,11 @@ static bool InitializeDLL()
 
 
 	// Preload OUR nvapi before we call init because we need some of our calls.
-#if(_WIN64)
-#define NVAPI_DLL L"nvapi64.dll"
-#else
-#define NVAPI_DLL L"nvapi.dll"
-#endif
+	#if(_WIN64)
+	#define NVAPI_DLL L"nvapi64.dll"
+	#else
+	#define NVAPI_DLL L"nvapi.dll"
+	#endif
 
 	// Load our nvapi wrapper from the same directory as our DLL, for injection cases
 	wchar_t nvapi_path[MAX_PATH];
